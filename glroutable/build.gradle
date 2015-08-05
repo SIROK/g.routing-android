@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'maven-publish'
+apply from: 'maven-push.gradle'
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -31,3 +32,4 @@ task makeJar(type: Copy) {
     rename('classes.jar', JAR_ARTIFACT_ID + '-' + JAR_VERSION_NAME + '.jar')
 }
 makeJar.dependsOn(clearJar, build)
+

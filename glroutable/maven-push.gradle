@@ -1,0 +1,16 @@
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.growthbeat.glroutable' //ライブラリ公開用のGroupドメイン
+            artifactId project.name //ライブラリ名
+            version android.defaultConfig.versionName //バージョン
+            artifact source: file("${project.buildDir}/outputs/aar/${project.name}-release.aar") //デプロイしたいアーカイブのパス
+        }
+    }
+    repositories {
+        maven {
+            url "file:${rootDir}/maven-repo" //Mavenリポジトリを作る場所の指定
+
+        }
+    }
+}
