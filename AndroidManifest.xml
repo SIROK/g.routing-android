@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.growthbeat.link.glrouting"
+    package="com.growthbeat.link.glroutable"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -12,6 +12,20 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.growthbeat.link.glroutable.RouterActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="custom" android:host="router"  />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.growthbeat.link.glroutable.TestActivity">
+        </activity>
     </application>
 
 </manifest>
